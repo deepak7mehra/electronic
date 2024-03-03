@@ -9,7 +9,7 @@ export default function RightNav() {
             <div>
                 Example
             </div>
-            <div className='text-sm pr-2 font-extralight text-[#34394f]'>clocked in 12:23PM</div>
+            <div className='text-sm pr-2 font-extralight text-[#34394f]'>clocked in 12:23Am</div>
 
             </div>
             <div>
