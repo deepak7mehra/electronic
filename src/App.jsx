@@ -10,45 +10,70 @@ import Button from './components/Button'
 
 const myMenu = [
   {
-    "name": "Starter (veg)",
+    "name": "Table 1",
     "items": [{"Spring Roll":50},{"Corn":70},{"momos":50},{"samosa":20},{"chowmin":60}],
+    "id":1,
+    "status":"occupied"
     
   },
   {
-    "name":"Starter (non veg)",
+    "name":"Table 2",
     "items":[{"Chicken Tikka":260},{"Tandoori Chiken":260},{"Cheese Kebab":260}],
+    "id":2
 
   },
   {
-    "name":"Main Course",
+    "name":"Table 3",
     "items":[{"Palak Paneer":300}],
+    "id":3,
+    "status":"occupied"
 
   },
   {
-    "name":"Pizza",
+    "name":"Table 4",
     "items":[{"Margerita":250},{"Cheese Corn":600}],
+    "id":4,
     
   },
   {
-    "name":"Dessert",
+    "name":"Table 5",
     "items":[{"Ice cream":100},{"Choco lava":130}],
+    "id":5,
     
 
   },
   {
-    "name":"Beverage",
+    "name":"Table 6",
     "items":[{"Coco Cola":50}],
+    "id":6,
 
   },
   {
-    "name":"Soups",
+    "name":"Table 7",
     "items":[{"Chiken Soup":60},{"Veg Soup":70}],
+    "id":7,
+    "status":"occupied"
    
   },
   {
-    "name":"Rum",
+    "name":"Table 8",
     "items":[{"Rumq":599}],
+    "id":8,
     
+
+  },
+  {
+    "name":"Table 9",
+    "items":[{"Ice cream":100},{"Choco lava":130}],
+    "id":9,
+    
+
+  },
+  {
+    "name":"Table 10",
+    "items":[{"Coco Cola":50}],
+    "id":10,
+    "status":"occupied"
 
   }
 ]
@@ -62,7 +87,7 @@ export default function () {
   }
   
   return (
-    <div className='grid md:grid-cols-10 bg-[#0a0f28] min-h-screen'>
+    <div className='md:grid md:grid-cols-10  min-h-screen'>
 
       <div className=' col-span-10 md:col-span-7 border-r-2 border-black'>
       <nav className='border-b-2 border-black'>
@@ -71,14 +96,13 @@ export default function () {
       <main className=''>
         <div className='  pt-3 px-4 pb-3 text-[#ffff] font-semibold border-b-2 border-black'>
           <div className='gap-2 grid grid-cols-2 md:grid-cols-4'>
-          <MenuItem setTemp={setTemp} color = {"bg-[#b43c3c]"} name={myMenu[0]["name"]} noItems = {myMenu[0].items.length} id={1}/>
-          <MenuItem setTemp={setTemp} color = {"bg-[#5a41af]"} name={myMenu[1]["name"]} noItems = {myMenu[1].items.length} id={2}/>
-          <MenuItem setTemp={setTemp} color = {"bg-[#7d147d]"} name={myMenu[2]["name"]} noItems = {myMenu[2].items.length} id={3}/>
-          <MenuItem setTemp={setTemp} color = {"bg-[#1e2369]"} name={myMenu[3]["name"]} noItems = {myMenu[3].items.length} id={4}/>
-          <MenuItem setTemp={setTemp} color = {"bg-[#3755b9]"} name={myMenu[4]["name"]} noItems = {myMenu[4].items.length} id={5}/>
-          <MenuItem setTemp={setTemp} color = {"bg-[#735a2d]"} name={myMenu[5]["name"]} noItems = {myMenu[5].items.length} id={6}/>
-          <MenuItem setTemp={setTemp} color = {"bg-[#9b234b]"} name={myMenu[6]["name"]} noItems = {myMenu[6].items.length} id={7}/>
-          <MenuItem setTemp={setTemp} color = {"bg-[#28502d]"} name={myMenu[7]["name"]} noItems = {myMenu[7].items.length} id={8}/>
+          
+
+          {
+            myMenu.map((menu)=>(
+              <MenuItem setTemp={setTemp}  name={menu.name} id = {menu.id} status={menu.status}/>
+            ))
+          }
 
           </div>
           
