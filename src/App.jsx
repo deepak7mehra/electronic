@@ -118,7 +118,7 @@ export default function () {
 
         </div>
       </main>
-      hi there in feature branch
+      hi there in feature branch2
       </div>
       <div className='md:col-span-3  md:visible'>
         <div>
