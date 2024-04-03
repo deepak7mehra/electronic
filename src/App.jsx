@@ -82,10 +82,12 @@ const myMenu = [
 
 
 export default function () {
+  const [show,setShow] = useState(false);
  
   
   return (
-    <div className='md:grid md:grid-cols-10'>
+    <>
+    <div className={`md:grid md:grid-cols-10 ${show? `blur-sm`:``}`}>
 
       <div className=' col-span-10 md:col-span-7 border-r-2 border-black'>
       <nav className='border-b-2 border-black'>
@@ -160,7 +162,9 @@ export default function () {
 
           {
             myMenu.map((menu)=>(
+              <button onClick={()=>setShow(true)}>
               <MenuItem   name={menu.name} id = {menu.id} status={menu.status}/>
+              </button>
             ))
           }
 
@@ -231,11 +235,12 @@ export default function () {
         
       </div>
       
-      <div className='w-[400px] border border-black rounded-xl p-5 '>
-        <CustomerDetail/>
-      </div>
 
 
     </div>
+    {show && <div className='w-[300px] border border-black rounded-xl p-5 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white shadow-lg '>
+    <CustomerDetail setShow={setShow}/>
+    </div>}
+    </>
   )
 }
