@@ -4,7 +4,7 @@ import { TextField, Button, Typography,} from '@mui/material';
 
 // Remove the makeStyles call and useStyles constant
 
-const CustomerDetail = () => {
+const CustomerDetail = ({setShow}) => {
   // Remove the useStyles hook
 
   const [customer, setCustomer] = useState({
@@ -29,9 +29,14 @@ const CustomerDetail = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Typography variant="h5" gutterBottom>
-        Customer Details
-      </Typography>
+        <div className='flex justify-between'>
+            <Typography variant="h5" gutterBottom>
+                Customer Details
+            </Typography>
+            <div>
+                <button onClick={()=>setShow(false)}><img width="30" height="48" src="https://img.icons8.com/emoji/48/cross-mark-emoji.png" alt="cross-mark-emoji"/></button>
+            </div>
+        </div>
       <TextField
         fullWidth
         label="Name"
@@ -67,7 +72,7 @@ const CustomerDetail = () => {
         size="large"
         style={{ marginTop: '1rem' }}
       >
-        Submit
+        Next
       </Button>
      
      
