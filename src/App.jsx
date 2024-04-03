@@ -7,6 +7,7 @@ import RightNav from './components/RightNav'
 import Cart from './components/Cart'
 import Button from './components/Button'
 import Available from './components/Available'
+import CustomerDetail from './components/CustomerDetail'
 
 
 const myMenu = [
@@ -81,14 +82,10 @@ const myMenu = [
 
 
 export default function () {
-  const [temp,setTemp] = useState(2)
-  let arr = []
-  if (temp!=0){
-    arr = myMenu[temp-1]["items"];
-  }
+ 
   
   return (
-    <div className='md:grid md:grid-cols-10  min-h-screen'>
+    <div className='md:grid md:grid-cols-10'>
 
       <div className=' col-span-10 md:col-span-7 border-r-2 border-black'>
       <nav className='border-b-2 border-black'>
@@ -163,7 +160,7 @@ export default function () {
 
           {
             myMenu.map((menu)=>(
-              <MenuItem setTemp={setTemp}  name={menu.name} id = {menu.id} status={menu.status}/>
+              <MenuItem   name={menu.name} id = {menu.id} status={menu.status}/>
             ))
           }
 
@@ -171,7 +168,7 @@ export default function () {
           
 
         </div>
-        <div className='grid gap-2 grid-cols-4 px-4 text-[#ffff]'>
+        {/* <div className='grid gap-2 grid-cols-4 px-4 text-[#ffff]'>
           {temp!==0 &&
             arr.map(function(el){
               const [key] = Object.entries(el);
@@ -179,7 +176,7 @@ export default function () {
             })
           }
 
-        </div>
+        </div> */}
       </main>
       
       </div>
@@ -233,6 +230,11 @@ export default function () {
           
         
       </div>
+      
+      <div className='w-[400px] border border-black rounded-xl p-5 '>
+        <CustomerDetail/>
+      </div>
+
 
     </div>
   )
