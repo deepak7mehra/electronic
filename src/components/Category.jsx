@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuItem from './MenuItem'
+import MenuItem from './TableItem'
 
 export default function Category() {
   return (

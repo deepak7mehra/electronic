@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Category from './components/Category'
-import MenuItem from './components/MenuItem'
+import MenuItem from './components/TableItem'
 import Item from './components/Item'
 import RightNav from './components/RightNav'
 import Cart from './components/Cart'
@@ -91,7 +91,7 @@ export default function () {
 
       <div className=' col-span-10 md:col-span-7 border-r-2 border-black'>
       <nav className='border-b-2 border-black'>
-        <Navbar/>
+        <Navbar type={"Tables"}/>
       </nav>
       <div className='md:hidden bg-[#1976d2] text-[#ffff] mt-3 mx-4'>
         <div className='flex justify-evenly items-center'>
