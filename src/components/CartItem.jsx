@@ -14,7 +14,7 @@ export default function CartItem({name,quantity,price}) {
             </div>
         </div>
         <div>
-        ₹ {price}
+        ₹ {price} X {quantity}
         </div>
       
     </div>
