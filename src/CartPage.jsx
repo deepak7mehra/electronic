@@ -2,11 +2,12 @@ import React from 'react'
 import RightCartNav from './components/RightCartNav'
 import Button from './components/Button'
 import Cart from './components/Cart'
+import { NavLink } from 'react-router-dom'
 
 export default function CartPage() {
     return (
         <div className='bg-[#e9ecee] '>
-            <div className='bg-white w-[500px] mx-auto py-2'>
+            <div className='bg-white max-w-[500px] mx-3 md:mx-auto py-2'>
                 <div>
                     <RightCartNav />
                 </div>
@@ -41,6 +42,14 @@ export default function CartPage() {
                 </div>
 
             </div>
+
+            <NavLink to="/" className='fixed bottom-[0px] md:bottom-2  left-2 '>
+                <div className='bg-black w-[70px] p-3 rounded-full'>
+                <div><img width="40" height="50" src="https://img.icons8.com/quill/50/FFFFFF/open-book.png" alt="open-book" /></div>
+                <div className='text-[#ffff] text-sm'>MENU</div>
+                </div>
+
+            </NavLink>
 
 
         </div>

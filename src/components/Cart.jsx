@@ -22,13 +22,7 @@ export default function Cart() {
         </div>
       }
 
-      <NavLink to="/" className='fixed bottom-[70px] md:bottom-2  left-2 '>
-        <div className='bg-black w-[70px] p-3 rounded-full'>
-          <div><img width="40" height="50" src="https://img.icons8.com/quill/50/FFFFFF/open-book.png" alt="open-book" /></div>
-          <div className='text-[#ffff] text-sm'>MENU</div>
-        </div>
-
-      </NavLink>
+      
 
     </div>
   )
