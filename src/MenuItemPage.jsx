@@ -80,13 +80,13 @@ export default function MenuItemPage() {
         })
           }
 
-      <div className='fixed bottom-2  left-2 '>
+      <NavLink to="/" className='fixed bottom-[70px] md:bottom-2  left-2 '>
       <div className='bg-black w-[70px] p-3 rounded-full'>
-        <NavLink to="/menu"><img width="40" height="50" src="https://img.icons8.com/quill/50/FFFFFF/open-book.png" alt="open-book"/></NavLink> 
+        <div><img width="40" height="50" src="https://img.icons8.com/quill/50/FFFFFF/open-book.png" alt="open-book"/></div> 
         <div className='text-[#ffff] text-sm'>MENU</div>
       </div>
 
-    </div>
+    </NavLink>
 
     </div>
     

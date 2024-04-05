@@ -7,7 +7,7 @@ import MenuItem from './components/MenuItem'
 import Item from './components/Item'
 import RightCartNav from './components/RightCartNav'
 import { useSelector } from 'react-redux'
-import { Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import MenuTable from './MenuTable'
 
 
@@ -99,7 +99,7 @@ export default function Menu() {
 
         </div>
 
-        <div className='col-span-3'>
+        <div className='hidden md:block md:col-span-3'>
             <div>
                 <RightCartNav/>
             </div>
@@ -133,6 +133,15 @@ export default function Menu() {
 
             </div>
 
+        </div>
+        <div className=' md:hidden flex items-center  justify-between mx-1 p-2 bg-[#60b246] text-[#fff] font-semibold fixed bottom-0 right-0 left-0'>
+          <div className='text-sm'>
+            item added
+          </div>
+          <NavLink to="/cart" className='flex  items-center gap-2'>
+            <div className='text-[10px]'>VIEW CART</div>
+            <img width="20" height="64" src="https://img.icons8.com/wired/64/FFFFFF/shopping-cart--v1.png" alt="shopping-cart--v1"/>
+          </NavLink>
         </div>
         
         

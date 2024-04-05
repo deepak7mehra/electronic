@@ -13,6 +13,7 @@ import TablePage from './pages/TablePage'
 import MenuTable from './MenuTable'
 import Menu from './Menu'
 import MenuItemPage from './MenuItemPage'
+import CartPage from './CartPage'
 
 export default function () {
   const [show,setShow] = useState(false);
@@ -20,11 +21,12 @@ export default function () {
   
   return (<BrowserRouter>
       <Routes>
-        <Route path='/' element={<TablePage/>}/>
-        <Route path='/menu' element = {<Menu/>}>
+       {/*  <Route path='/' element={<TablePage/>}/> */}
+        <Route path='/' element = {<Menu/>}>
           <Route index  element = {<MenuTable/>}/>
           <Route path='item' element={<MenuItemPage/>}/>
         </Route>
+        <Route path='/cart' element={<CartPage/>}/>
       </Routes>
     </BrowserRouter>
   )
