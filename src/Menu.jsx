@@ -7,6 +7,8 @@ import MenuItem from './components/MenuItem'
 import Item from './components/Item'
 import RightCartNav from './components/RightCartNav'
 import { useSelector } from 'react-redux'
+import { Outlet } from 'react-router-dom'
+import MenuTable from './MenuTable'
 
 
 const myMenu = [
@@ -78,16 +80,13 @@ export default function Menu() {
             <nav className='border-b-2   border-black'>
                 <Navbar type={"Menu"} />
             </nav>
-            <div className='gap-2 grid grid-cols-2 md:grid-cols-4'>
-                {
-                    myMenu.map(function(item){
-                        
-                        return <MenuItem name={item.name} items={item.items.length} active={id===item.id} id={item.id} setId={setId}/>
-                    })
-                }
+            
+            <div className=''>
+              <Outlet/>
+            </div>    
                 
-          </div>
-          <div className='m-2 mt-3 gap-2 grid grid-cols-2 md:grid-cols-4'>
+          
+          {/* <div className='m-2 mt-3 gap-2 grid grid-cols-2 md:grid-cols-4'>
           {
             id && arr.map(function(item){
                 const [key] = Object.entries(item);
@@ -95,7 +94,7 @@ export default function Menu() {
         })
           }
 
-          </div>
+          </div> */}
           
 
         </div>
