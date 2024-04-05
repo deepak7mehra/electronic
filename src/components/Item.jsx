@@ -3,10 +3,12 @@ import IncreaseQuantity from '../services/IncreaseQuantity'
 import DecrementQuantity from '../services/DecrementQuantity'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../cart/cartSlice'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export default function Item({name,price}) {
   const dispatch = useDispatch();
+  const notify = ()=>toast.success('Item added ')
 
   function handleClick(){
     const item = {
@@ -14,6 +16,7 @@ export default function Item({name,price}) {
       price,
       quantity:1
     }
+    notify()
     dispatch(addItem(item))
   }
 
@@ -32,6 +35,7 @@ export default function Item({name,price}) {
         <DecrementQuantity name={name}/> */}
       </div>
     </div>
+    <Toaster/>
 
     </div>
   )
